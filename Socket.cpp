@@ -96,6 +96,11 @@ int Socket::Receive(Socket &socket,string &msg)const
 
     int ret = recv(socket.m_fd,buffer,MAXRECV,0);
     msg = buffer;
+    if(ret == -1)
+    {
+        close(socket.m_fd);
+        socket.m_fd = -1;
+    }
     return ret;
 }
 
