@@ -29,7 +29,7 @@ char logmsg[40];
 static void sig_alrm(int signo)
 {
 
-    snprintf(logmsg,40,"Agerage age:%.4f\n",average_age);    
+    snprintf(logmsg,40,"totVisited times: %d,agerage age:%.4f\n",visitedTimes,average_age);    
     if(logFp)
     {
         fputs(logmsg,logFp);
